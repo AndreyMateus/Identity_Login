@@ -45,7 +45,7 @@
 
 > 1. Primeiro temos que gerar esses arquivos, para que possamos modificá-los.
 
-- ***Pois por padrão, o IDENTITY só disponibiliza os arquivos em versão Compilada***
+- ***Pois por padrão, o IDENTITY vem com os arquivos em versão Compilada***
 
 > 2. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR** executando o seguinte comando: ***```dotnet tool install -g dotnet-aspnet-codegenerator```***
 > 3. Abra o Terminal do Projeto e Instale o seguinte **PACOTE/PACKAGE** executando o seguinte comando: ***```dotnet add package Microsoft.VisualStudio.Web.Codegeneration.Design --version 6```***
