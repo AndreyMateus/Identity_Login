@@ -23,6 +23,11 @@ namespace Identity_Login.Controllers
             return View();
         }
 
+        public IActionResult MyMethod(string parameter)
+        {
+            return Ok();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
