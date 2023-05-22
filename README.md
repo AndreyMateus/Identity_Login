@@ -8,12 +8,6 @@
 
 ***
 
-## Como utilizar a Identity API ?
-
-> Utilizando as ferramentas de CLI disponibilizadas pela ***Plataforma DOTNET***.
-> Sendo elas: O ***Code Generator*** e o ***Code Generator <u>Design</u>***.
-***
-
 ## Como é a estrutura do Identity API dentro do projeto/design ?
 
 > Será criado uma pasta chamada **"Areas"** onde ficarão todos os ***"dados/estruturas/pastas"*** gerados pela Identity API, há uma exceção, que são os arquivos padrões compilados do Identity e que estão dentro da pasta BIN.
@@ -33,6 +27,9 @@
 
 > 1. Execute um Git Clone do Projeto ou Baixe ele e o abra em sua IDE.
 > 2. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
+>>
+>> - Na Connection String haverá o **Database=identityefcoreproject;**, esse Database será criado automaticamente, você não precisa se preocupar, caso queira mudar o nome do Database, fique à vontade.
+>>
 > 3. Abra o Terminal e execute o comando: ***```dotnet restore```***
 > 4. Novamente abra o Terminal e execute o comando: ***```dotnet build```***
 > 5. Caso não seja detectado algum erro com o **passo 6**, execute um ***```dotnet run```***.
@@ -40,7 +37,7 @@
 
 ***
 
-## Pré-requistos para Modificar os recuros/pages da Identity API
+## Pré-requistos para Modificar os recursos/pages da Identity API
 
 > - Ferramenta (CLI) **ASPNET Code Generator** da plataforma **.NET**, a instalação ocorre mais abaixo nesse mesmo **READ-ME.**
 
