@@ -53,7 +53,7 @@
 > 5. Listaremos todos os ARQUIVOS que PODEM ser GERADOS e ALTERÁDOS com o seguinte comando: ```dotnet-aspnet-codegenerator identity --listFiles```
 > 6. Iremos gerar o arquivo com base no **CONTEXTO** escolhido, para que assim possamos modificá-lo: ```dotnet aspnet-codegenerator identity -dc Identity_Login.Data.ApplicationDbContext.cs --files Account.Register```
 
->***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u>>.***
+>***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u>.***
 
 ***
-Vídeo do Projeto: <u>[Clique aqui para Assistir](https://www.youtube.com.br)</u>
+Vídeo do Projeto: [Clique aqui para Assistir](https://www.youtube.com.br)
