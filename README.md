@@ -20,40 +20,51 @@
 
 ***
 
-## Pré-requistos para utilizar a Identity API
+## Pré-requistos para Rodar o Projeto Identity API
 
 > - .NET SDK 6.0
-> - Ferramenta (CLI) Code Generator Aspnet do .Net, a instalação ocorre mais abaixo nesse mesmo **READ-ME.**
 > - Servidor de Banco de Dados SqlServer rodando em sua máquina.
-> **Não se preocupe em criar qualquer TABELA**, apenas necessitamos de um *servidor SqlServer*, o resto o Entity Framework Core fará para nós automaticamente.
+>
+>> **Não se preocupe em criar qualquer BANCO ou TABELA**, apenas necessitamos de um *servidor SqlServer*, o resto o Entity Framework Core fará para nós automaticamente.
 
 ***
 
 ## Como Instalar e Rodar o projeto
 
-> 1. Execute um Git Clone do Projeto e o abra em sua IDE.
-> 2. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR <u>DESIGN</u>** executando o seguinte comando: ***```dotnet```***
-> 3. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
-> 4. Abra o Terminal e execute o comando: ***```dotnet restore```***
-> 5. Novamente abra o Terminal e execute o comando: ***```dotnet build```***
-> 6. Caso não seja detectado algum erro com o **passo 6**, execute um ***```dotnet run```***.
-> 7. **Divirta-se**.
+> 1. Execute um Git Clone do Projeto ou Baixe ele e o abra em sua IDE.
+> 2. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
+> 3. Abra o Terminal e execute o comando: ***```dotnet restore```***
+> 4. Novamente abra o Terminal e execute o comando: ***```dotnet build```***
+> 5. Caso não seja detectado algum erro com o **passo 6**, execute um ***```dotnet run```***.
+> 6. **Divirta-se**.
+
+***
+
+## Pré-requistos para Modificar os recuros/pages da Identity API
+
+> - Ferramenta (CLI) **ASPNET Code Generator** da plataforma **.NET**, a instalação ocorre mais abaixo nesse mesmo **READ-ME.**
 
 ***
 
 ## Como Personalizar e Modificar Arquivos/Pages do Identity API ?
 
-> 1. Primeiro temos que gerar esses arquivos, para que possamos modificá-los.
+>- Primeiro temos que gerar esses arquivos, para que possamos modificá-los, ***Pois por padrão, o IDENTITY vem com os arquivos em versão Compilada***.
 
-- ***Pois por padrão, o IDENTITY vem com os arquivos em versão Compilada***
+> 1. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR** executando o seguinte comando: ***```dotnet tool install -g dotnet-aspnet-codegenerator```***
+> 2. Abra o Terminal do Projeto e Instale o seguinte **PACOTE/PACKAGE** executando o seguinte comando: ***```dotnet add package Microsoft.VisualStudio.Web.Codegeneration.Design --version 6```***
+>
+>> **O passo 2** não será necessário se você estiver utilizando o projeto deste repositório, pois esse pacote **já foi adicionado** ***por mim***.
+>
+> - Então após termos **INSTALADO** a **FERRAMENTA DE <u>CLI</u>** para geração de códigos/templates e o **PACKAGE/PACOTE**, conseguiremos modificar esses arquivos e **RE-COMPILAR** eles, assim os substituíremos pela nova versão **COMPILADA**, que foi criada após modificarmos os arquivos.
+>
+> 3. Listaremos todos os ARQUIVOS que PODEM ser GERADOS e ALTERADOS com o seguinte comando: ```dotnet-aspnet-codegenerator identity --listFiles```
+> 4. Iremos gerar os arquivos com base no **CONTEXTO** escolhido, para que assim possamos modificá-los: ```dotnet aspnet-codegenerator identity -dc Identity_Login.Data.ApplicationDbContext.cs --files Account.Register```
+> 5. Modifique a página/arquivo desejado e seja feliz!
+>
+***
 
-> 2. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR** executando o seguinte comando: ***```dotnet tool install -g dotnet-aspnet-codegenerator```***
-> 3. Abra o Terminal do Projeto e Instale o seguinte **PACOTE/PACKAGE** executando o seguinte comando: ***```dotnet add package Microsoft.VisualStudio.Web.Codegeneration.Design --version 6```***
-> 4. Então após termos **INSTALADO** as **FERRAMENTAS DE <u>CLI</u>** para geração de códigos/templates, conseguiremos modificar esses arquivos e **RE-COMPILAR** eles, assim os substituindo pela nova versão **COMPILADA**, que foi criada por nós.
-> 5. Listaremos todos os ARQUIVOS que PODEM ser GERADOS e ALTERÁDOS com o seguinte comando: ```dotnet-aspnet-codegenerator identity --listFiles```
-> 6. Iremos gerar o arquivo com base no **CONTEXTO** escolhido, para que assim possamos modificá-lo: ```dotnet aspnet-codegenerator identity -dc Identity_Login.Data.ApplicationDbContext.cs --files Account.Register```
-
->***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u>.***
+>***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u> entre DIFERENTES tipos de PROJETOS.***
 
 ***
+
 Vídeo do Projeto: [Clique aqui para Assistir](https://www.youtube.com.br)
