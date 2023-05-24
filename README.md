@@ -26,6 +26,9 @@ A Identity API é uma API do ASP.NET Core que oferece recursos de autenticação
 ## Como Instalar e Rodar o projeto
 
  1. Execute um Git Clone do Projeto ou Baixe ele e o abra em sua IDE.
+ 
+ - Se sua CONEXÃO UTILIZA AUTORIZAÇÃO DO WINDOWS QUE FUNCIONA SEM LOGIN E SEM SENHA, PULE O PASSO 2, JÁ DEIXEI CONFIGURADO PARA VOCÊ =).
+ 
  2. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
 
  - Na Connection String haverá o **Database=identityefcoreproject;**, esse Database será criado automaticamente, você não precisa se preocupar, caso queira mudar o nome do Database, fique à vontade.
