@@ -39,33 +39,33 @@
 
 ## Pré-requistos para Modificar os recursos/pages da Identity API
 
-> - Ferramenta (CLI) **ASPNET Code Generator** da plataforma **.NET**, a instalação ocorre mais abaixo nesse mesmo **READ-ME.**
+ - Ferramenta (CLI) **ASPNET Code Generator** da plataforma **.NET**, a instalação ocorre mais abaixo nesse mesmo **READ-ME.**
 
 ***
 
 ## Como Personalizar e Modificar Arquivos/Pages do Identity API ?
 
->- Primeiro temos que gerar esses arquivos, para que possamos modificá-los, ***Pois por padrão, o IDENTITY vem com os arquivos em versão Compilada***.
+- Primeiro temos que gerar esses arquivos, para que possamos modificá-los, ***Pois por padrão, o IDENTITY vem com os arquivos em versão Compilada***.
 
-> 1. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR** executando o seguinte comando: ***```dotnet tool install -g dotnet-aspnet-codegenerator```***
-> 2. Abra o Terminal do Projeto e Instale o seguinte **PACOTE/PACKAGE** executando o seguinte comando: ***```dotnet add package Microsoft.VisualStudio.Web.Codegeneration.Design --version 6```***
->
->> **O passo 2** não será necessário se você estiver utilizando o projeto deste repositório, pois esse pacote **já foi adicionado** ***por mim***.
->
-> - Então após termos **INSTALADO** a **FERRAMENTA DE <u>CLI</u>** para geração de códigos/templates e o **PACKAGE/PACOTE**, conseguiremos modificar esses arquivos e **RE-COMPILAR** eles, assim os substituíremos pela nova versão **COMPILADA**, que foi criada após modificarmos os arquivos.
->
-> 3. Listaremos todos os ARQUIVOS que PODEM ser GERADOS e ALTERADOS com o seguinte comando: ```dotnet-aspnet-codegenerator identity --listFiles```
-> 4. Iremos gerar os arquivos com base no **CONTEXTO** escolhido, para que assim possamos modificá-los: ```dotnet aspnet-codegenerator identity -dc Identity_Login.Data.ApplicationDbContext.cs --files Account.Register```
-> 5. Modifique a página/arquivo desejado e seja feliz!
->
+ 1. Abra o Terminal do Projeto e Instale a Ferramenta (CLI) **DOTNET ASPNET CODE GENERATOR** executando o seguinte comando: ***```dotnet tool install -g dotnet-aspnet-codegenerator```***
+ 2. Abra o Terminal do Projeto e Instale o seguinte **PACOTE/PACKAGE** executando o seguinte comando: ***```dotnet add package Microsoft.VisualStudio.Web.Codegeneration.Design --version 6```***
+
+ **O passo 2** não será necessário se você estiver utilizando o projeto deste repositório, pois esse pacote **já foi adicionado** ***por mim***.
+
+ - Então após termos **INSTALADO** a **FERRAMENTA DE <u>CLI</u>** para geração de códigos/templates e o **PACKAGE/PACOTE**, conseguiremos modificar esses arquivos e **RE-COMPILAR** eles, assim os substituíremos pela nova versão **COMPILADA**, que foi criada após modificarmos os arquivos.
+
+ 3. Listaremos todos os ARQUIVOS que PODEM ser GERADOS e ALTERADOS com o seguinte comando: ```dotnet-aspnet-codegenerator identity --listFiles```
+ 4. Iremos gerar os arquivos com base no **CONTEXTO** escolhido, para que assim possamos modificá-los: ```dotnet aspnet-codegenerator identity -dc Identity_Login.Data.ApplicationDbContext.cs --files Account.Register```
+ 5. Modifique a página/arquivo desejado e seja feliz!
+
 ***
 
->***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u> entre DIFERENTES tipos de PROJETOS.***
+***Uma Curiosidade é que a Ferramenta ```dotnet aspnet-codegenerator``` pode ser usada para gerar <u>DIVERSOS</u> tipos de <u>ESTRUTURAS</u> e <u>ARQUIVOS</u> entre DIFERENTES tipos de PROJETOS.***
 
 ***
 
  **Dica**
- <p>Se quiser utilizar a IDENTIY API com outros Servidor de Banco de dados, como o MySql por exemplo, é necessário que você remova/exclua a MIGRATION padrão que já vem no PROJETO e também RESETE as TABELAS do BANCO de DADOS.</p>
+ <p>Se quiser utilizar a IDENTIY API com outros Servidores de Banco de dados, como o MySql por exemplo, é necessário que você remova/exclua a MIGRATION padrão que já vem no PROJETO e também RESETE as TABELAS do BANCO de DADOS.</p>
 
 ***
 
