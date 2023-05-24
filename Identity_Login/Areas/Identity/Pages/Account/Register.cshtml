@@ -1,5 +1,6 @@
 ﻿@page
 @model RegisterModel
+
 @{
     ViewData["Title"] = "Cadastro";
 }
@@ -18,15 +19,26 @@
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="form-floating">
+                <input asp-for="Input.NomeCompleto" class="form-control" autocomplete="Nome Completo" aria-required="true" />
+                <label asp-for="Input.NomeCompleto"></label>
+                <!-- As Mensagens de VALIDAÇÃO são esses spans abaixo. -->
+                @* <span asp-validation-for="Input.ConfirmacaoNomeCompleto" class="text-danger"></span> *@
+            </div>
+             <div class="form-floating">
+                <input asp-for="Input.Idade" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Input.Idade"></label>
+                @* <span asp-validation-for="Input.Idade" class="text-danger"></span> *@
+            </div>
+            <div class="form-floating">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password">Senha</label>
+                <label asp-for="Input.Password"></label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating">
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <label asp-for="Input.ConfirmPassword">Confirme a senha</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
+            </div>  
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-success">Cadastrar</button>
         </form>
     </div>

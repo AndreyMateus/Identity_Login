@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
@@ -19,6 +20,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
+
+// A PageModel é como se fosse um "CONTROLLER" dedicado a uma ÚNICA VIEW.
 namespace Identity_Login.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
@@ -70,6 +73,13 @@ namespace Identity_Login.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [Display(Name = "Nome Completo")]
+            public string NomeCompleto { get; set; }
+
+            [Required]
+            public int Idade { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -84,9 +94,9 @@ namespace Identity_Login.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "A {0} deve ter pelo menos {2} and e no máximo {1} caractere.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Senha")]
             public string Password { get; set; }
 
             /// <summary>
@@ -95,8 +105,9 @@ namespace Identity_Login.Areas.Identity.Pages.Account
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "As Senhas não são iguais")]
             public string ConfirmPassword { get; set; }
+
         }
 
 
@@ -106,6 +117,7 @@ namespace Identity_Login.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
+        // Método que realiza o cadastro/registro no banco
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
@@ -122,6 +134,15 @@ namespace Identity_Login.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
+                    // As Claims só são do tipo STRING e o PRIMEIRO nome/palavra delas começa com Letras Maiúscula.
+
+                    // Adicionando uma CLAIM chamada Nome Completo
+                    await _userManager.AddClaimAsync(user, new Claim("Nomecompleto",Input.NomeCompleto));
+					
+                    // Adicionando uma CLAIM chamada Idade
+                    await _userManager.AddClaimAsync(user, new Claim("Idade",Input.Idade.ToString()));
+
+
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -131,7 +152,7 @@ namespace Identity_Login.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    await _emailSender.SendEmailAsync(Input.Email, "Confirme seu email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)

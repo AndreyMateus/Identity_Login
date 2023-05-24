@@ -1,9 +1,13 @@
 ﻿using Identity_Login.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Identity_Login.Controllers
 {
+    // Adicionando AUTORIZAÇÃO no HomeController
+    // Significa que somente USUÁRIOS LOGADOS poderão acessar esse CONTROLLER.
+    //[Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,6 +22,8 @@ namespace Identity_Login.Controllers
             return View();
         }
 
+        // Também podemos optar por AUTORIZAR somente ACTIONS, assim o usuário conseguirá acessar o CONTROLLER e algumas ACTIONS, mas não todas as actions.
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();
