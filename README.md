@@ -64,4 +64,9 @@
 
 ***
 
+ **Dica**
+ <p>Se quiser utilizar a IDENTIY API com outros Servidor de Banco de dados, como o MySql por exemplo, é necessário que você remova/exclua a MIGRATION padrão que já vem no PROJETO e também RESETE as TABELAS do BANCO de DADOS.</p>
+
+***
+
 Vídeo do Projeto: [Clique aqui para Assistir](https://www.youtube.com.br)
