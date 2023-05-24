@@ -2,38 +2,38 @@
 
 ## Oque é o Identity API e como funciona ?
 
->A Identity API é uma API do ASP.NET Core que oferece recursos de autenticação e autorização para aplicativos da web. Ela simplifica a implementação de recursos de identidade, como autenticação de usuários, gerenciamento de contas e autorização baseada em roles. A Identity API é configurada por padrão para utilizar o provedor de armazenamento de dados Entity Framework Core (EF Core), permitindo armazenar informações relacionadas à identidade dos usuários em um banco de dados relacional.
+A Identity API é uma API do ASP.NET Core que oferece recursos de autenticação e autorização para aplicativos da web. Ela simplifica a implementação de recursos de identidade, como autenticação de usuários, gerenciamento de contas e autorização baseada em roles. A Identity API é configurada por padrão para utilizar o provedor de armazenamento de dados Entity Framework Core (EF Core), permitindo armazenar informações relacionadas à identidade dos usuários em um banco de dados relacional.
 
->***No entanto***, ela também suporta outros provedores de armazenamento de dados, proporcionando flexibilidade na escolha do provedor mais adequado às necessidades do projeto. Além disso, a Identity API é altamente personalizável, permitindo ajustes e customizações de acordo com os requisitos específicos do aplicativo.
+***No entanto***, ela também suporta outros provedores de armazenamento de dados, proporcionando flexibilidade na escolha do provedor mais adequado às necessidades do projeto. Além disso, a Identity API é altamente personalizável, permitindo ajustes e customizações de acordo com os requisitos específicos do aplicativo.
 
 ***
 
 ## Como é a estrutura do Identity API dentro do projeto/design ?
 
-> Será criado uma pasta chamada **"Areas"** onde ficarão todos os ***"dados/estruturas/pastas"*** gerados pela Identity API, há uma exceção, que são os arquivos padrões compilados do Identity e que estão dentro da pasta BIN.
+ Será criado uma pasta chamada **"Areas"** onde ficarão todos os ***"dados/estruturas/pastas"*** gerados pela Identity API, há uma exceção, que são os arquivos padrões compilados do Identity e que estão dentro da pasta BIN.
 
 ***
 
 ## Pré-requistos para Rodar o Projeto Identity API
 
-> - .NET SDK 6.0
-> - Servidor de Banco de Dados SqlServer rodando em sua máquina.
->
->> **Não se preocupe em criar qualquer BANCO ou TABELA**, apenas necessitamos de um *servidor SqlServer*, o resto o Entity Framework Core fará para nós automaticamente.
+ - .NET SDK 6.0
+ - Servidor de Banco de Dados SqlServer rodando em sua máquina.
+
+> **Não se preocupe em criar qualquer BANCO ou TABELA**, apenas necessitamos de um *servidor SqlServer*, o resto o Entity Framework Core fará para nós automaticamente.
 
 ***
 
 ## Como Instalar e Rodar o projeto
 
-> 1. Execute um Git Clone do Projeto ou Baixe ele e o abra em sua IDE.
-> 2. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
->>
->> - Na Connection String haverá o **Database=identityefcoreproject;**, esse Database será criado automaticamente, você não precisa se preocupar, caso queira mudar o nome do Database, fique à vontade.
->>
-> 3. Abra o Terminal e execute o comando: ***```dotnet restore```***
-> 4. Novamente abra o Terminal e execute o comando: ***```dotnet build```***
-> 5. Caso não seja detectado algum erro com o **passo 6**, execute um ***```dotnet run```***.
-> 6. **Divirta-se**.
+ 1. Execute um Git Clone do Projeto ou Baixe ele e o abra em sua IDE.
+ 2. Vá no arquivo **Settings.json** e Configure a sua ***String de Conexão***, ( lá terá um TEMPLATE da connection string esperada pelo **SQLSERVER**, basta apenas que você o preencha corretamente.)
+
+ - Na Connection String haverá o **Database=identityefcoreproject;**, esse Database será criado automaticamente, você não precisa se preocupar, caso queira mudar o nome do Database, fique à vontade.
+
+ 3. Abra o Terminal e execute o comando: ***```dotnet restore```***
+ 4. Novamente abra o Terminal e execute o comando: ***```dotnet build```***
+ 5. Caso não seja detectado algum erro com o **passo 6**, execute um ***```dotnet run```***.
+ 6. **Divirta-se**.
 
 ***
 
